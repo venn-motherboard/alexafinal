@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Programmer Profile Terminal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="in-terminal">
+
+<!-- ================= TERMINAL LOGIN (you do not need to edit this) ================= -->
+<div id="boot">
+  <div class="win">
+    <div class="win-bar"><span class="dots"><i></i><i></i><i></i></span><span>PROFILE_TERMINAL.exe</span></div>
+    <div id="out" role="log" aria-live="polite"></div>
+    <form id="cmdform" autocomplete="off">
+      <label for="cmd" class="prompt">guest@portfolio:~$</label>
+      <input id="cmd" type="text" autocapitalize="none" autocorrect="off" spellcheck="false" aria-label="Type a command">
+      <button type="submit" class="btn">Run</button>
+    </form>
+  </div>
+</div>
+
+<!-- ================= PROFILE SITE ================= -->
+<div id="site" hidden>
+<!--
+  =====================================================================
+  HOW TO EDIT: change only the text between the tags.
+  Gray dashed text like [Your Name] is a placeholder. Replace it, then
+  delete  class="ph"  from that tag so it turns normal.
+  =====================================================================
+-->
+<header class="top">
+  <a class="brand" href="#about">&gt;_ PROFILE_TERMINAL</a>
+  <nav id="nav" aria-label="Sections">
+    <a href="#about">~/about</a><a href="#personal-info">~/personal-info</a><a href="#college-achievements">~/college-achievements</a>
+    <a href="#education">~/education</a><a href="#skills">~/skills</a><a href="#contact">~/contact</a>
+  </nav>
+  <button class="btn sm" id="backTerm" type="button">Back to terminal</button>
+</header>
+
+<main>
+  <!-- ========== ABOUT ========== -->
+  <section id="about">
+    <h2>WHO_AM_I.md</h2>
+    <div class="card about">
+      <div class="avatar" aria-hidden="true">AF</div>
+      <!-- To use a photo, replace the line above with:  <img class="avatar" src="me.jpg" alt="Photo of me">  -->
+      <div>
+        <p class="big"><span data-show="NAME"></span></p>
+        <p class="muted">Age <span data-show="AGE"></span> · <span data-show="COURSE"></span> · <span data-show="YEAR"></span> · <span data-show="SCHOOL"></span></p>
+        <p id="bio" class="ph">[Write a short personal introduction here. Who are you and what do you enjoy building?]</p>
+        <p class="ph"><b>Career goals and interests:</b> [Write your career goals and programming interests here.]</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PERSONAL INFO (edit your details ONCE here, they appear everywhere) ========== -->
+  <section id="personal-info">
+    <h2>SYSTEM_INFO</h2>
+    <div class="card sysinfo">
+      <div>NAME = "<span data-var="NAME">Alexa Faye G. Abad</span>"</div>
+      <div>AGE = "<span data-var="AGE">19</span>"</div>
+      <div>SCHOOL = "<span data-var="SCHOOL">Nueva Vizcaya State University</span>"</div>
+      <div>COURSE = "<span data-var="COURSE">BS Information Technology</span>"</div>
+      <div>YEAR = "<span data-var="YEAR" class="ph">[Your Year Level]</span>"</div>
+      <div>LOCATION = "<span data-var="LOCATION" class="ph">[Optional: Your Location]</span>"</div>
+    </div>
+  </section>
+
+  <!-- ========== COLLEGE ACHIEVEMENTS ========== -->
+  <section id="college-achievements">
+    <h2>COLLEGE_ACHIEVEMENTS.log</h2>
+    <!-- To add one: copy a whole <article class="card entry"> ... </article> block and edit it.
+         To show none: delete all the blocks and the "No records" message appears. -->
+    <div class="stack" data-list>
+      <article class="card entry">
+        <h3>NCII Passer</h3>
+        <p class="meta">Certificate · ICT batch 2023</p>
+        <p>National Certificate II holder in ICT.</p>
+        <!-- Optional certificate image: <img class="cert" src="certificate.jpg" alt="NCII certificate"> -->
+      </article>
+      <article class="card entry">
+        <h3 class="ph">[Achievement Title]</h3>
+        <p class="meta ph">[Award / Certificate / Project / Competition] · [Date or Academic Year]</p>
+        <p class="ph">[Description of Achievement]</p>
+      </article>
+    </div>
+    <p class="empty" hidden>No records found. Awaiting new achievements...</p>
+  </section>
+
+  <!-- ========== EDUCATION ========== -->
+  <section id="education">
+    <h2>EDUCATION_HISTORY.txt</h2>
+    <!-- To add an achievement: copy one <li class="ph">...</li> line inside a card. Copy as many as you like. -->
+    <div class="timeline">
+      <article class="card edu">
+        <span class="lvl">ELEMENTARY</span><h3>Bayombong Central School SPED Center</h3>
+        <h4>academic_achievements/</h4>
+        <ul class="ach"><li class="ph">[Add an award, honor, or recognition]</li><li class="ph">[Add another achievement]</li><li class="ph">[Add another achievement]</li></ul>
+      </article>
+      <article class="card edu">
+        <span class="lvl">JUNIOR HIGH SCHOOL</span><h3>Saint Mary's University &amp; Nueva Vizcaya General Comprehensive High School</h3>
+        <h4>academic_achievements/</h4>
+        <ul class="ach"><li class="ph">[Add an award, honor, or recognition]</li><li class="ph">[Add another achievement]</li><li class="ph">[Add another achievement]</li></ul>
+      </article>
+      <article class="card edu">
+        <span class="lvl">SENIOR HIGH SCHOOL</span><h3>Nueva Vizcaya General Comprehensive High School</h3>
+        <h4>academic_achievements/</h4>
+        <ul class="ach"><li class="ph">[Add an award, honor, or recognition]</li><li class="ph">[Add another achievement]</li><li class="ph">[Add another achievement]</li></ul>
+      </article>
+      <article class="card edu">
+        <span class="lvl">COLLEGE</span><h3><span data-show="SCHOOL"></span></h3>
+        <p class="muted"><span data-show="COURSE"></span> · <span data-show="YEAR"></span></p>
+        <h4>academic_achievements/</h4>
+        <ul class="ach"><li class="ph">[Add a college honor, certification, or project]</li><li class="ph">[Add another achievement]</li><li class="ph">[Add another achievement]</li></ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- ========== SKILLS (add or delete tags freely; no percentages are made up) ========== -->
+  <section id="skills">
+    <h2>TECH_STACK.json</h2>
+    <div class="grid">
+      <article class="card"><h3>"programming_languages"</h3><div class="tags"><span class="tag ph">[Language]</span><span class="tag ph">[Language]</span></div></article>
+      <article class="card"><h3>"web_development"</h3><div class="tags"><span class="tag ph">[Skill]</span><span class="tag ph">[Skill]</span></div></article>
+      <article class="card"><h3>"databases"</h3><div class="tags"><span class="tag ph">[Database]</span></div></article>
+      <article class="card"><h3>"dev_tools"</h3><div class="tags"><span class="tag ph">[Tool]</span><span class="tag ph">[Tool]</span></div></article>
+      <article class="card"><h3>"soft_skills"</h3><div class="tags"><span class="tag ph">[Skill]</span><span class="tag ph">[Skill]</span></div></article>
+      <!-- Optional progress bar (only add a number you choose): <div class="bar" style="--v:70%"><i></i></div> -->
+    </div>
+  </section>
+
+  <!-- ========== CONTACT: a link stays hidden until you fill in its href ========== -->
+  <section id="contact">
+    <h2>CONTACT_INFO.cfg</h2>
+    <div class="grid links" data-links>
+      <a class="card link" href="">✉ EMAIL <small>(example: href="mailto:you@email.com")</small></a>
+      <a class="card link" href="" target="_blank" rel="noopener">⌥ GITHUB</a>
+      <a class="card link" href="" target="_blank" rel="noopener">in LINKEDIN</a>
+      <a class="card link" href="" target="_blank" rel="noopener">↗ OTHER LINK</a>
+    </div>
+    <p class="empty" hidden>No contact links added yet. Add them in index.html.</p>
+  </section>
+</main>
+
+<div class="status" role="status"><span>PROFILE STATUS: ONLINE</span><span>● SYSTEM ONLINE</span><span id="clock"></span></div>
+<button class="btn top-btn" id="toTop" type="button" aria-label="Back to top">↑ Top</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
